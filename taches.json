@@ -1,0 +1,12 @@
+[
+    {
+        "titre": "nouveau_projet2",
+        "description": "je viens de d\u00e9velopper une application de gestion des t\u00e2ches ou j'ai cr\u00e9er trois fichiers python \u00e0 savoir gestionnaire, main et tache.",
+        "faite": true
+    },
+    {
+        "titre": "travail",
+        "description": "j'ai pas ferm\u00e9 l'oeil de la nuit parce que je d\u00e9veloppais une application de gestion des t\u00e2ches pour mon portfolio sur github. Maintenant que tout est fonctionnel, je peux enfin faire un pushing via git.",
+        "faite": true
+    }
+]
