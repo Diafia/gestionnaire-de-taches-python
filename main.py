@@ -3,7 +3,6 @@ from gestionnaire import (
     sauvegarder_taches,
     ajouter_tache,
     afficher_taches,
-    supprimer_tache,
     marquer_faite,
     supprimer_tache
 )
