@@ -30,7 +30,7 @@ def sauvegarder_taches(taches):
         json.dump([t.to_dict() for t in taches], f, indent=4)
 
 # fonctions pour gérer les tâches
-def ajouter_tache(taches, titre, description):
+def ajouter_tache(taches, titre, description, priorite):
     t = Tache(titre, description)
     taches.append(t)
     sauvegarder_taches(taches)
@@ -38,12 +38,18 @@ def ajouter_tache(taches, titre, description):
 # fonctions pour afficher, marquer comme faite et supprimer les tâches
 def afficher_taches(taches):
     if not taches:
-        print("Aucune tâches.")
+        print("\nAucune tâches.\n")
         return
+    print("\n=== Liste des tâches ===\n")
     for i, t in enumerate(taches):
         statut = "FAITE" if t.faite else "NON FAITE"
-        print(f"{i+1}.{t.titre} - {statut}\n")
-        print(f"{t.description}\n")
+        couleur = "\033[92m" if t.faite else "\033[91m"
+        reset = "033[0m"
+
+        print(f"\n{couleur}{i+1}. {t.titre} - {statut}{reset}")
+        print(f" Description : {t.description}")
+        print(f" Priorité : {t.priorite}")
+        print(f" Créée le : {t.date_creation}")
 
 def marquer_faite(taches, index):
     try:
@@ -58,6 +64,19 @@ def supprimer_tache(taches, index):
         sauvegarder_taches(taches)
     except IndexError:
         print("Index invalide.")
+
+def trier_par_priorite(taches):
+    ordre = {
+        "haute":1,
+        "moyenne":2,
+        "basse":3
+    }
+    taches.sort(key=lambda t: ordre[t.priorite])
+    sauvegarder_taches(taches)
+
+def trier_par_date(taches):
+    taches.sort(key=lambda t: t.date_creation)
+    sauvegarder_taches(taches)
 
 
 
