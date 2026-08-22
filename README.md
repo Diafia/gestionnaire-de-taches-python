@@ -45,3 +45,27 @@ Toutes les tâches sont enregistrées dans `taches.json`.
 
 ## 📂 Structure du projet
 
+gestionnaire_taches_avance/
+│
+├── main.py
+├── gestionnaire.py
+├── tache.py
+└── taches.json   # créé automatiquement
+
+
+
+---
+
+## 🛠️ Installation & Exécution
+
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/<ton_nom>/gestionnaire-taches-avance.git
+cd gestionnaire-taches-avance
+
+
+### 2. Lancer l’application
+
+python main.py
+
